@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[22],{elZp:function(n,o,t){"use strict";t.r(o),t.d(o,"ProfileModule",(function(){return f}));var i=t("ofXK"),r=t("PCNd"),c=t("tyNb"),a=t("0vI5"),e=t("fXoL"),f=function(){var n=function n(){!function(n,o){if(!(n instanceof o))throw new TypeError("Cannot call a class as a function")}(this,n)};return n.\u0275mod=e.Lb({type:n}),n.\u0275inj=e.Kb({factory:function(o){return new(o||n)},imports:[[i.c,r.a,c.i.forChild([{path:"",component:a.a}])]]}),n}()}}]);
+//# sourceMappingURL=22-es5.e09e5c67a2b02caa4d74.js.map

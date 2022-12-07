@@ -1,0 +1,303 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API's for PredictSense Complete flow."
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "securityDefinitions": {
+    "JWT": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "auth"
+    }
+  },
+  "security": [
+    {
+      "JWT": []
+    }
+  ],
+  "responses": {
+    "UnauthorizedError": {
+      "description": "Access token is missing or invalid"
+    }
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/auth/signin": {
+      "post": {
+        "tags": [
+          "Sign In"
+        ],
+        "description": "Sign In",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to Sign In",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/api/projects": {
+      "get": {
+        "tags": [
+          "Project List"
+        ],
+        "summary": "Project List",
+        "responses": {
+          "200": {
+            "description": "Data is found"
+          }
+        }
+      }
+    },
+    "/api/v2/projects/{projectId}/data/upload/{dataGroupId}": {
+      "post": {
+        "tags": [
+          "Upload File"
+        ],
+        "summary": "Upload File",
+        "description": "",
+        "operationId": "Upload File",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "projectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "dataGroupId",
+            "in": "path",
+            "description": "dataGroupId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "file to upload",
+            "required": true,
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/api/v2/projects/{projectId}/dataGroup": {
+      "get": {
+        "tags": [
+          "Folder"
+        ],
+        "summary": "Folder List",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data is found"
+          }
+        }
+      }
+    },
+    "/api/v2/projects/{projectId}/data/fileLists": {
+      "post": {
+        "summary": "File List",
+        "tags": [
+          "File List"
+        ],
+        "description": "File List",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "projectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "output",
+            "in": "body",
+            "description": "File List",
+            "schema": {
+              "$ref": "#/definitions/files"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data is found"
+          }
+        }
+      }
+    },
+    "/api/v2/projects/shareOutput/byUser": {
+      "get": {
+        "tags": [
+          "Output"
+        ],
+        "summary": "Output List",
+        "responses": {
+          "200": {
+            "description": "Data is found"
+          }
+        }
+      }
+    },
+    "/api/v2/projects/output/data": {
+      "post": {
+        "tags": [
+          "Output"
+        ],
+        "parameters": [
+          {
+            "name": "Output",
+            "in": "body",
+            "description": "Output List",
+            "schema": {
+              "$ref": "#/definitions/Output"
+            }
+          }
+        ],
+        "summary": "Output List",
+        "responses": {
+          "200": {
+            "description": "Data is found"
+          }
+        }
+      }
+    },
+    "/api/udd": {
+      "get": {
+        "tags": [
+          "dataflow"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "description": "projectId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "summary": "dataflow List",
+        "responses": {
+          "200": {
+            "description": "Data is found"
+          }
+        }
+      }
+    },
+    "/api/project/{projectId}/udd/{uddId}/execute": {
+      "get": {
+        "tags": [
+          "dataflow"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "projectId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "uddId",
+            "in": "path",
+            "description": "uddId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "summary": "Execute Data Flow",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "required": [
+        "username",
+        "password"
+      ],
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "Output": {
+      "required": [
+        "outputId"
+      ],
+      "properties": {
+        "outputId": {
+          "type": "string"
+        }
+      }
+    },
+    "files": {
+      "properties": {
+        "dataGroupId": {
+          "type": "string"
+        },
+        "fileExtention": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

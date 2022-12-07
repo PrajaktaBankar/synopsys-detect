@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <style>
+      .container {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: whitesmoke;
+      }
+      .title {
+        text-transform: capitalize !important;
+      }
+      .container .logo {
+        background-color: #07509d;
+        padding: 10px 20px;
+      }
+      .container .body {
+        padding: 25px;
+      }
+      .logo > img {
+        width: 200px !important;
+      }
+      p,
+      li {
+        font-size: 19px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img src="cid:logo_login_814" />
+      </div>
+      <div class="body">
+        <h2 class="title">Hello {{name}},</h2>
+        <p>You have successfully {{updateType}} for {{type}} of {{appName}} {{plan}} membership!</p>
+        <p>
+          The plan will be charged and activated at the end of your current billing cycle i.e, on
+          <span style="color: #07509d">{{planStart}}</span>.
+        </p>
+        <p>Hope you'll enjoy it. &#129321;</p>
+        <!-- <p style="font-size: 15px !important">
+          Note:<br />
+          1. The debited amount (Rs. 5) is for verification purpose and will be refunded in working
+          days.<br />
+          2. The payment will be only charged on {{planStart}} and not prior to that.
+        </p> -->
+        <p>Regards,<br />The {{appName}} Team</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <style>
+      .container {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: whitesmoke;
+      }
+
+      .title {
+        text-transform: capitalize !important;
+      }
+
+      .container .logo {
+        background-color: #07509d;
+        padding: 10px 20px;
+      }
+
+      .container .body {
+        padding: 25px;
+      }
+
+      .logo > img {
+        width: 200px !important;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img src="cid:logo_login_814" />
+      </div>
+      <div class="body">
+        <h2 class="title">Hello {{name}},</h2>
+        <p>Congratulations!</p>
+        <p>
+          You're all set and successfully registered. Now you can solve complex real time business
+          problems with our high-power algorithms in a very less amount of operational time.
+        </p>
+        <!-- <p align="center"><a href="{{url}}">Click here to verify</a></p> -->
+        <p>
+          Subscribe to our platform, to make full use of the product or go through 14 days free trial
+          to get a wholesome idea.
+        </p>
+        <p>We are glad that you are here!</p>
+        <p>Please click <a href="{{url}}">here</a> to verify your account.</p>
+        <p>Welcome Aboard! &#129321;</p>
+        <p>Regards,<br />The {{appName}} Team</p>
+      </div>
+    </div>
+  </body>
+</html>

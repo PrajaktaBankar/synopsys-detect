@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <style>
+    .container {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: whitesmoke;
+    }
+
+    .title {
+      text-transform: capitalize !important;
+    }
+
+    .container .logo {
+      background-color: #07509d;
+      padding: 10px 20px;
+    }
+
+    .container .body {
+      padding: 25px;
+    }
+
+    .logo>img {
+      width: 200px !important;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="cid:logo_login_814" />
+    </div>
+    <div class="body">
+      <h2 class="title">Hello {{name}},</h2>
+      <p>Congratulations!</p>
+      <p>
+        {{inviter}} invited you to join PredictSense. Given below is your temporary PredictSense
+        credentials. Please verify your account first, by clicking <a href="{{url}}">here</a>.</p>
+      </p>
+      <p><b>Username : </b>{{username}}</p>
+      <p><b>Password : </b>{{password}}</p>
+      <p><b>Url : </b><a href="http://app.predictsense.io">PredictSense</a></p>
+      <p>Welcome Aboard! &#129321;</p>
+      <p>Regards,<br />The {{appName}} Team</p>
+    </div>
+  </div>
+</body>
+
+</html>

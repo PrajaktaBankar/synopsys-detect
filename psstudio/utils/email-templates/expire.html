@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <style>
+      .container {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: whitesmoke;
+      }
+      .container .logo {
+        background-color: #07509d;
+        padding: 10px 20px;
+      }
+      .title {
+        text-transform: capitalize !important;
+      }
+      .container .body {
+        padding: 25px;
+      }
+      .logo > img {
+        width: 200px !important;
+      }
+      p {
+        font-size: 19px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img src="cid:logo_login_814" />
+      </div>
+      <div class="body">
+        <h2 class="title">Hello {{name}},</h2>
+        <p>
+          Your 7 days free trial of {{appName}} membership will be expiring on Jul 20, 2021 and will
+          be charged monthly as per your selected plan. Please upgrade your membership.
+        </p>
+        <p>Will love to work with you again!</p>
+        <p>Thank you.</p>
+        <p>The {{appName}} Support Team</p>
+      </div>
+    </div>
+  </body>
+</html>

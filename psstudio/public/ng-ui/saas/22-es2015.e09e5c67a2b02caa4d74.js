@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[22],{elZp:function(n,o,t){"use strict";t.r(o),t.d(o,"ProfileModule",(function(){return u}));var e=t("ofXK"),r=t("PCNd"),i=t("tyNb"),c=t("0vI5"),p=t("fXoL");let u=(()=>{class n{}return n.\u0275mod=p.Lb({type:n}),n.\u0275inj=p.Kb({factory:function(o){return new(o||n)},imports:[[e.c,r.a,i.i.forChild([{path:"",component:c.a}])]]}),n})()}}]);
+//# sourceMappingURL=22-es2015.e09e5c67a2b02caa4d74.js.map

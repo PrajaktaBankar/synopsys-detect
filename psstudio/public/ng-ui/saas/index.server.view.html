@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>PredictSense</title>
+    <base href="/" />
+    <script
+      nonce="{{ recaptchaNonce }}"
+      src="https://www.google.com/recaptcha/api.js"
+      async
+      defer
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!-- Analytics: Only uncomment while creating the build -->
+    <!-- <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = 'https://www.clarity.ms/tag/' + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, 'clarity', 'script', 'a0tg7n2j6s');
+    </script> -->
+
+    <!--  remove this script and uncomment the below script for getting pendo
+    features. -->
+
+    <script nonce="{{ recaptchaNonce }}">
+      (function (apiKey) {
+        (function (p, e, n, d, o) {
+          var v, w, x, y, z;
+          o = p[d] = p[d] || {};
+          o._q = o._q || [];
+          v = ["initialize", "identify", "updateOptions", "pageLoad", "track"];
+          for (w = 0, x = v.length; w < x; ++w)
+            (function (m) {
+              o[m] =
+                o[m] ||
+                function () {
+                  o._q[m === v[0] ? "unshift" : "push"](
+                    [m].concat([].slice.call(arguments, 0))
+                  );
+                };
+            })(v[w]);
+          y = e.createElement(n);
+          y.async = !0;
+          y.src = "https://cdn.pendo.io/agent/static/" + apiKey + "/pendo.js";
+          z = e.getElementsByTagName(n)[0];
+          z.parentNode.insertBefore(y, z);
+        })(window, document, "script", "pendo");
+        // in your authentication promise handler or callback
+
+        var user = {{ user | json | safe }}
+        var accountId = user.email? user.email.split(/@(.*)\./)[1] : 'default-test'
+
+        pendo.initialize({
+          visitor: {
+            id: user._id, // Required if user is logged in
+            email: user.email, // Recommended if using Pendo Feedback, or NPS Email
+            // full_name: user.firstName + user.lastName,    // Recommended if using Pendo Feedback
+            // role: user.roles,         // Optional
+
+            // You can add any additional visitor level key-values here,
+            // as long as it's not one of the above reserved names.
+          },
+
+          account: {
+            id: accountId, // Highly recommended
+            // name:         // Optional
+            // is_paying:    // Recommended if using Pendo Feedback
+            // monthly_value:// Recommended if using Pendo Feedback
+            // planLevel:    // Optional
+            // planPrice:    // Optional
+            // creationDate: // Optional
+
+            // You can add any additional account level key-values here,
+            // as long as it's not one of the above reserved names.
+          },
+          events: {
+            ready: function () {
+                pendo.loadGuides()
+            }
+          }
+        });
+      })("2067a9bc-0122-46f9-42af-9e43b6fb24d8");
+    </script>
+  <link rel="stylesheet" href="styles.3c581423301b9114d7c8.css"></head>
+
+  <body>
+    <script
+      nonce="{{ recaptchaNonce }}"
+      src="https://checkout.razorpay.com/v1/checkout.js"
+    ></script>
+    <app-root></app-root>
+    <div class="preloader">
+      <div class="preloader-progress">
+        <div class="preloader-progress-bar"></div>
+      </div>
+    </div>
+  <script src="runtime-es2015.7cdd3ab0e34e0c26cfe9.js" type="module"></script><script src="runtime-es5.7cdd3ab0e34e0c26cfe9.js" nomodule defer></script><script src="polyfills-es5.22b263a30ebdbaa5e2b2.js" nomodule defer></script><script src="polyfills-es2015.7a101caf0b744619d61d.js" type="module"></script><script src="scripts.97521660ebe6c5d39585.js" defer></script><script src="main-es2015.52007533fd0498a7ae5f.js" type="module"></script><script src="main-es5.52007533fd0498a7ae5f.js" nomodule defer></script></body>
+</html>

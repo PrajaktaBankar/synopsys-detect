@@ -1,0 +1,67 @@
+version: "3"
+services:
+  
+  nginx:
+    build: ./nginx
+    ports:
+    - "80:80"
+    restart: always
+    depends_on:
+      - psstudio  
+  mongodb:
+    image: mongo:4.4
+    container_name: mongodb
+    restart: always
+    volumes: 
+      - db:/data/db
+  psstudio:
+    image: psstudio_saas:v4.5.0
+    container_name: psstudio
+    restart: always
+    environment:
+      - DB_1_PORT_27017_TCP_ADDR=mongodb
+      - PSCORE_HOST=pscore
+      - PSCORE_PORT=5000
+      - PORT=3000
+      - MACHINE_INFO=${MACHINE_INFO}
+      - JN_HOST=localhost
+      - NODE_ENV=production
+      - APP_TYPE=saas
+      - MAILER_EMAIL_ID=support@predictsense.io
+      - MAILER_PASSWORD=PS@2021#
+    depends_on:
+    - mongodb
+    ports:
+    - "3000:3000"
+    volumes:
+      - project:/home/predictsense/psstudio/projects
+  pscore:
+    image: pscore_saas:v4.5.0
+    container_name: pscore
+    restart: always
+    environment:
+      - PSSTUDIO_URL=psstudio
+      - PSSTUDIO_PORT=3000
+      - JN_HOST=psstudio
+      - JN_PSSTUDIO_URL=localhost
+      - CELERY_URL=broker
+      - MONGO_URL=mongodb
+      - DB_NAME=wj-psense
+      - PSS_PATH=/home/predictsense/psstudio
+    depends_on:
+    - psstudio
+    - broker
+    ports:
+    - "5000:5000"
+    - "8888:8888"
+    volumes:
+      - project:/home/predictsense/psstudio/projects
+  broker:
+    image: rabbitmq:3-management
+    restart: always
+    ports:
+      - 5672:5672
+      - 15672:15672
+volumes: 
+  project:
+  db:

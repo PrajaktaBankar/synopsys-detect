@@ -1,0 +1,3 @@
+{
+    "watch":["modules/","utils/","config/","public/"]
+}
