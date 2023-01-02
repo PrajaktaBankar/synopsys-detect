@@ -52,7 +52,7 @@
     "mock-fs": "~3.4.0",
     "mongoose": "~5.11.7",
     "morgan": "^1.6.1",
-    "multer": "~1.0.5",
+    "multer": "~1.4.4",
     "node-red": "file:node-red",
     "node-schedule": "^2.1.0",
     "nodemailer": "^1.4.0",
