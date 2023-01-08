@@ -1,4 +1,4 @@
-FROM python:3.7.4-slim
+FROM python:3.8-slim
 # FROM node:6.10.1-slim
 ENV NODE_VERSION=14.15.1
 RUN apt-get -y update  && apt-get -y install curl \
