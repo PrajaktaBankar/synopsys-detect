@@ -3,7 +3,7 @@ Flask==1.0.2
 #mpld3==0.3
 #wordcloud==1.5.0
 matplotlib==3.0.2
-nltk==3.4.3
+nltk==3.6.6
 pandas==0.25.3
 requests==2.22.0
 scipy==1.2.1
@@ -34,3 +34,4 @@ pymongo==3.9.0
 #fbprophet==0.5
 #pillow==2.2.1
 lxml
+numpy>=1.22.2 # not directly required, pinned by Snyk to avoid a vulnerability
