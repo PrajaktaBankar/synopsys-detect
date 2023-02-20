@@ -1,6 +1,6 @@
 Flask==1.0.2
 matplotlib==3.0.2
-nltk==3.4.3
+nltk==3.6.6
 pandas==0.25.3
 requests==2.22.0
 scipy==1.2.1
@@ -14,3 +14,4 @@ cufflinks==0.16
 plotly==3.10.0
 pymongo==3.9.0
 lxml
+numpy>=1.22.2 # not directly required, pinned by Snyk to avoid a vulnerability
