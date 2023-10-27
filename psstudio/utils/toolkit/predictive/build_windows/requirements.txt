@@ -34,3 +34,4 @@ pymongo==3.9.0
 #fbprophet==0.5
 #pillow==2.2.1
 
+werkzeug>=3.0.1 # not directly required, pinned by Snyk to avoid a vulnerability
