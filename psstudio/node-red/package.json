@@ -67,7 +67,7 @@
         "passport-http-bearer": "1.0.1",
         "passport-oauth2-client-password": "0.1.2",
         "raw-body": "2.4.1",
-        "request": "2.88.0",
+        "request": "2.88.2",
         "semver": "6.3.0",
         "tar": "6.0.5",
         "uglify-js": "3.11.6",
