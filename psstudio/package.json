@@ -21,7 +21,7 @@
   "dependencies": {
     "acl": "~0.4.11",
     "ajv": "^6.10.2",
-    "archiver": "^5.0.2",
+    "archiver": "^7.0.0",
     "body-parser": "^1.13.1",
     "chalk": "^1.1.0",
     "compression": "^1.7.0",
