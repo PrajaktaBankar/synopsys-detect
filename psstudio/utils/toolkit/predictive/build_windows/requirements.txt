@@ -13,7 +13,7 @@ pandas-profiling==2.3.0
 #celery==4.2.1
 hashids==1.2.0
 tensorflow==2.0.0-alpha0
-keras==2.2.4
+keras==2.13.1rc0
 xgboost==0.90
 lightgbm==2.2.3
 #colour==0.1.5
