@@ -21,7 +21,7 @@ hashids==1.2.0
 statsmodels==0.9.0
 contractions==0.0.18
 textblob==0.15.3
-scikit-learn==0.20.3
+scikit-learn==1.5.0
 cufflinks==0.16
 plotly==3.10.0
 #scikit-plot==0.3.7
