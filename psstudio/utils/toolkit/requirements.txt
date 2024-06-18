@@ -8,3 +8,4 @@ pymongo
 hashids
 tensorflow==2.0.0-alpha0
 keras
+urllib3>=2.2.2 # not directly required, pinned by Snyk to avoid a vulnerability
