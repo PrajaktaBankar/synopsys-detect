@@ -1,4 +1,4 @@
-FROM python:3.7-slim
+FROM python:3.13.0b2-slim
 RUN mkdir -p /toolkit
 WORKDIR /toolkit/
 ADD requirements.txt /toolkit/
