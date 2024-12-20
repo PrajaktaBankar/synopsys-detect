@@ -1,9 +1,13 @@
-Flask==1.0.2
-requests==2.22.0
+Flask==2.2.5
+requests==2.32.2
 numpy==1.16.4
-scipy==1.2.1
+scipy==1.10.0rc1
 pandas==0.24.2
-pymongo==3.8.0
+pymongo==4.6.3
 hashids==1.2.0
 statsmodels==0.9.0
 fbprophet==0.5
+idna>=3.7 # not directly required, pinned by Snyk to avoid a vulnerability
+urllib3>=1.26.19 # not directly required, pinned by Snyk to avoid a vulnerability
+werkzeug>=3.0.6 # not directly required, pinned by Snyk to avoid a vulnerability
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
