@@ -73,7 +73,7 @@
     "swagger-ui-express": "4.1.4",
     "swig": "^1.4.2",
     "type-of-is": "^3.5.1",
-    "validator": "^3.41.2",
+    "validator": "^13.15.20",
     "winston": "3.3.3",
     "xlsx": "^0.14.0"
   },
